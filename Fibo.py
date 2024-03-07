@@ -5,6 +5,13 @@ LIM_MAX = 45
 dictFibo = {}
 listFibo = []
 
+# Recursive Fibonacci function.
+def Fibo(n, x, y):
+	if n<=1:
+		return x+y
+	else:
+		return Fibo(n-1, y, x+y)
+
 # Fibonacci function.
 def fib(n, x, y):
 	print()
@@ -34,6 +41,9 @@ if n>=LIM_MIN and n<=LIM_MAX:
 
 	print()
 	print(f"Latest Fibonacci result for [{x}] and [{y}] is: [{fib}] with [{n}] iterations.")
+
+	print()
+	print(f"Recursive Fibo of [{x}] and [{y}] is: [{Fibo(n,x,y)}] with [{n}] iterations.")
 
 	print()
 	print("List containing lists of the Fibonacci series.")
