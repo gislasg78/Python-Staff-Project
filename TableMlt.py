@@ -19,6 +19,7 @@ for m in range(0, n_matrix):
 		for c in range(0, n_cols):
 			value = int(input(f"Enter a value for Matrix: [{m + 1}] of [{n_matrix}] -> (Row: [{r + 1}] of [{n_rows}], Column: [{c + 1}] of [{n_cols}]) : "))
 			matrix_cols.append(value)
+			print(f"(Matrix: [{m + 1}] of [{n_matrix}]. Row: [{r + 1}] of [{n_rows}], Column: [{c + 1}] of [{n_cols}]) = [{value}].")
 
 		matrix_rows.append(matrix_cols)
 		print()
@@ -33,19 +34,19 @@ print(matrix_matrix)
 print()
 n_matrix = 0
 for m in matrix_matrix:
-	n_matrix+=1
+	n_matrix += 1
 	print(f"Matrix: [{n_matrix}] of [{len(matrix_matrix)}].")
 
-	n_rows=0
+	n_rows = 0
 	for r in m:
-		n_rows+=1
+		n_rows += 1
 		print(f"\tRow: [{n_rows}] of [{len(m)}].")
 
-		n_cols=0
+		n_cols = 0
 		for c in r:
-			n_cols+=1
+			n_cols += 1
 			print(f"\t\tColumn: [{n_cols}] of [{len(r)}].", end='\t');
-			print(f"Value: [{c}].")
+			print(f"({n_matrix}, {n_rows}, {n_cols}) = [{c}].")
 
 		print()
 
