@@ -1,8 +1,10 @@
 # Program that validates the largest of three integers.
 
-num1 = int(input("Enter a first number: "))
+print("Program that validates the largest of three integers.")
+
+num1 = int(input("Enter a first number : "))
 num2 = int(input("Enter a second number: "))
-num3 = int(input("Enter a third number: "))
+num3 = int(input("Enter a third number : "))
 
 if num1>=num2 and num1>=num3:
     print(f"The first number: [{num1}] is greater than second number: [{num2}] and third number: [{num3}].")
