@@ -34,14 +34,17 @@ print("You rolled a: [" + str(random.randrange(1, 7)) + "].")
 
 # Random Choices.
 print()
-print("Random number generation for Melate.")
+print("Random number generation for Lottery.")
 quantity_tickets = int(input("Number of tickets: "))
+numbers_by_ticket = int(input("Numbers per ticket: "))
+minimum_value = int(input("Minimum value: "))
+maximum_value = int(input("Maximum value: "))
 
 print()
 print("List of randomly generated tickets.")
 print(datetime.now().strftime("[%A, %B %d, %Y] - [%H:%M:%S]."))
 
-list_of_tickets = tickets(quantity_tickets, 6, 1, 48)
+list_of_tickets = tickets(quantity_tickets, numbers_by_ticket, minimum_value, maximum_value + 1)
 
 cards = ["Jack", "Queen", "King", "Ace"]
 print()
