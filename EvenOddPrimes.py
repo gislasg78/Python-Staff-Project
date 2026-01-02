@@ -36,18 +36,42 @@ def sum_of_evens_odds_primes(numbers):
 		[counter_primes, addition_primes]]
 
 legends = [["Evens", "Odds", "Primes"], ["Count", "Sum"]]
-numbers = [62, 66, 94, 97, 25, 11, 68, 54, 48, 67]
+numbers = set()
+
+print("Counter for even, odd, and prime numbers.")
+
+counter = 0
+number = 1
+while (number != 0):
+	print()
+	print(f"Try\x20\x23\x3a\x20\x5b{counter + 1}\x5d")
+	print("Enter zero to exit.")
+
+	try:
+		number = int(input("Enter an integer: "))
+
+		if number:
+			numbers.add(number)
+			counter += 1
+		else:
+			print("Leaving the program...")
+
+	except Exception as e:
+		number = 0
+		print(e)
 
 extracts = extract_of_evens_odds_primes(numbers)
 summations = sum_of_evens_odds_primes(numbers)
 
+print()
 print("Sum of even, odd and prime numbers exercise.")
-print(f"+ List: {sorted(numbers)}")
+print(f"{numbers}")
 
 first_header, second_header = 0, 1
 
 print()
 print("Extractions.")
+print(f"Quantity: [{counter}].")
 
 counter = 0
 for row in extracts:
