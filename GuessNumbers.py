@@ -26,14 +26,17 @@ while ((guess >= lower_limit) and (guess <= upper_limit)) and guess != correct_n
 	try:
 		guess = int(input(f"What is your guest ({lower_limit} - {upper_limit})? : "))
 
-		list_of_guesses.append(guess)
+		if guess:
+			list_of_guesses.append(guess)
 
-		if guess in dict_of_guesses:
-			dict_of_guesses[guess] += 1
+			if guess in dict_of_guesses:
+				dict_of_guesses[guess] += 1
+			else:
+				dict_of_guesses[guess] = 1
+
+			set_of_guesses.add(guess)
 		else:
-			dict_of_guesses[guess] = 1
-
-		set_of_guesses.add(guess)
+			print("Leaving the program...")
 
 	except Exception as e:
 		guess = 0
