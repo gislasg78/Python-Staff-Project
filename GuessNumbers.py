@@ -20,13 +20,13 @@ print("Type zero to give up!")
 print()
 
 while ((guess >= lower_limit) and (guess <= upper_limit)) and guess != correct_number and guess != 0:
-	print(f"Tried\x20\x23: [{guess_count + 1}].")
+	print(f"Tried\x20\x23\x3a [{guess_count + 1}].")
 	print("Enter zero to exit.")
 
 	try:
 		guess = int(input(f"What is your guest ({lower_limit} - {upper_limit})? : "))
 
-		if guess:
+		if guess > 0:
 			list_of_guesses.append(guess)
 
 			if guess in dict_of_guesses:
@@ -35,6 +35,8 @@ while ((guess >= lower_limit) and (guess <= upper_limit)) and guess != correct_n
 				dict_of_guesses[guess] = 1
 
 			set_of_guesses.add(guess)
+		elif guess < 0:
+			raise Exception("You cannot enter negative guessing numbers.")
 		else:
 			print("Leaving the program...")
 
@@ -62,7 +64,7 @@ else:
 	print(f"Your last number: [{guess}] does not match the guessed number: [{correct_number}].")
 
 print()
-print("Numbers guessed:")
+print("Numbers guessed.")
 print(f"{list_of_guesses}")
 print(f"{dict_of_guesses}")
 print(f"{set_of_guesses}")
