@@ -3,20 +3,32 @@ def get_prime_factors(number):
 	divisor = 2
 
 	while (divisor <= number):
-		if (number % divisor) == 0:
+		if (number % divisor):
+			divisor += 1
+		else:
 			factors.append(divisor)
 			number /= divisor
-		else:
-			divisor += 1
 
 	return factors
 
 
 print("Decomposition of a number into its prime factors.")
 
-number = int(input("Enter an integer value to decompose: "))
-list_of_factors = get_prime_factors(number)
+try:
+	number = int(input("Enter an integer value to decompose: "))
 
-print("")
-print(f"Number to be decomposed:\t{number}.")
-print(f"List of prime factors:\t\t{list_of_factors}.")
+	if number < 0:
+		raise Exception("Negative numbers cannot be entered.")
+	elif number > 0:
+		list_of_factors = get_prime_factors(number)
+
+		print("")
+		print(f"Number to be decomposed: [{number}].")
+		print("Number of prime factors: [{}].".format(len(list_of_factors)))
+		print(f"List of prime factors:")
+		print("{}.".format(list_of_factors))
+	else:
+		print("There are no prime factors for the number zero.")
+
+except Exception as e:
+	print(e)
