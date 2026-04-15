@@ -1,4 +1,10 @@
+# Program that asks the user for a number to be guessed from a given range,
+# and that number is a random number from that range,
+# and counts all attempts in various ways.
 import random
+
+guess_count = 0
+guess_limit = 100
 
 lower_limit = 1
 upper_limit = 100
@@ -6,7 +12,6 @@ upper_limit = 100
 correct_number = random.randint(lower_limit, upper_limit)
 factor = random.random()
 guess = random.randrange(lower_limit, upper_limit)
-guess_count = 0
 
 list_of_guesses = list()
 dict_of_guesses = {}
@@ -14,13 +19,14 @@ set_of_guesses = set()
 
 print("Hi! Welcome to the guessing game.")
 print(f"Please guess a number between: [{lower_limit}] and: [{upper_limit}].")
+print(f"Maximum number of riddle attempts: [{guess_limit}].")
 print(f"Chance factor of guessing: [{factor}].")
 print(f"Suggested starting number: [{guess}].")
 print("Type zero to give up!")
 print()
 
-while ((guess >= lower_limit) and (guess <= upper_limit)) and guess != correct_number and guess != 0:
-	print(f"Tried\x20\x23\x3a [{guess_count + 1}].")
+while ((guess >= lower_limit) and (guess <= upper_limit)) and (guess != correct_number) and (guess != 0) and (guess_count < guess_limit):
+	print(f"Tried\x20\x23\x3a [{guess_count + 1}] of\x3a [{guess_limit}].")
 	print("Enter zero to exit.")
 
 	try:
@@ -71,3 +77,4 @@ print(f"{set_of_guesses}")
 
 print()
 print(f"It took you: [{guess_count}] guesses.")
+print("Maximum number of guessing attempts: [{}].".format(guess_limit))
